@@ -5,8 +5,12 @@ use POSIX qw{log10};
 use base qw{Exporter};
 use Math::Round qw{};
 
-our $VERSION = '0.02';
-our @EXPORT_OK = qw(db_ratio ratio2db ratio_db db2ratio fsl_hz_m fsl_mhz_km fsl_ghz_km);
+our $VERSION = '0.03';
+our @EXPORT_OK = qw(
+                    db_ratio ratio2db
+                    ratio_db db2ratio
+                    fsl_hz_m fsl_mhz_km fsl_ghz_km fsl_mhz_mi
+                   );
 
 =head1 NAME
 
@@ -48,7 +52,7 @@ sub ratio_db {10 ** (shift()/10)};
 
 sub db2ratio {10 ** (shift()/10)};
 
-=head2 fsl_hz_m, fsl_mhz_km, fsl_ghz_km
+=head2 fsl_hz_m, fsl_mhz_km, fsl_ghz_km, fsl_mhz_mi
 
 Return power loss in dB given frequency and distance in the specified units of measure
 
@@ -69,6 +73,11 @@ sub fsl_mhz_km {
 sub fsl_ghz_km {
   my ($f, $d) = @_;
   return _fsl_constant($f, $d, 92.45);
+}
+
+sub fsl_mhz_mi {
+  my ($f, $d) = @_;
+  return _fsl_constant($f, $d, 36.58); #const = 20*log10(4*pi/c) where c = 0.18628237 mi/μs (aka mile * MHz)
 }
 
 sub _fsl_constant {

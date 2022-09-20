@@ -1,5 +1,5 @@
 Name:           perl-RF-Functions
-Version:        0.02
+Version:        0.03
 Release:        1%{?dist}
 Summary:        Perl Exporter for Radio Frequency (RF) Functions
 License:        CHECK(Distributable)
