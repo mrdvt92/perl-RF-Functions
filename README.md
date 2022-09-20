@@ -26,7 +26,7 @@ Returns power ratio given dB.
 
     my $power_ratio = ratio_db(3); #2
 
-## fsl\_hz\_m, fsl\_mhz\_km, fsl\_ghz\_km
+## fsl\_hz\_m, fsl\_mhz\_km, fsl\_ghz\_km, fsl\_mhz\_mi
 
 Return power loss in dB given frequency and distance in the specified units of measure
 
