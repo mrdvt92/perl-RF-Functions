@@ -26,15 +26,19 @@ Returns power ratio given dB.
 
     my $power_ratio = ratio_db(3); #2
 
-## fsl\_mhz\_km
+## fsl\_hz\_m, fsl\_mhz\_km, fsl\_ghz\_km
 
-Return power loss in dB given frequency in MHz and distance in km
+Return power loss in dB given frequency and distance in the specified units of measure
 
     my $free_space_loss = fsl_mhz_km($mhz, $km); #returns dB
 
 # SEE ALSO
 
-[POSIX](https://metacpan.org/pod/POSIX) log10
+["log10" in POSIX](https://metacpan.org/pod/POSIX#log10), ["nearest" in Math::Round](https://metacpan.org/pod/Math::Round#nearest)
+
+[https://en.wikipedia.org/wiki/Decibel#Power\_quantities](https://en.wikipedia.org/wiki/Decibel#Power_quantities)
+
+[https://en.wikipedia.org/wiki/Free-space\_path\_loss#Free-space\_path\_loss\_in\_decibels](https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels)
 
 # AUTHOR
 

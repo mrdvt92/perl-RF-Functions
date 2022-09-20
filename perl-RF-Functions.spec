@@ -1,5 +1,5 @@
 Name:           perl-RF-Functions
-Version:        0.01
+Version:        0.02
 Release:        1%{?dist}
 Summary:        Perl Exporter for Radio Frequency (RF) Functions
 License:        CHECK(Distributable)
@@ -13,6 +13,7 @@ BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(Test::Number::Delta)
 BuildRequires:  perl(Test::Simple)
 Requires:       perl(Exporter)
+Requires:       perl(Math::Round)
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 %description

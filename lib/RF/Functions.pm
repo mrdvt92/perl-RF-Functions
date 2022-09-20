@@ -3,9 +3,10 @@ use strict;
 use warnings;
 use POSIX qw{log10};
 use base qw{Exporter};
+use Math::Round qw{};
 
-our $VERSION = '0.01';
-our @EXPORT_OK = qw(db_ratio ratio2db ratio_db db2ratio fsl_mhz_km);
+our $VERSION = '0.02';
+our @EXPORT_OK = qw(db_ratio ratio2db ratio_db db2ratio fsl_hz_m fsl_mhz_km fsl_ghz_km);
 
 =head1 NAME
 
@@ -47,30 +48,44 @@ sub ratio_db {10 ** (shift()/10)};
 
 sub db2ratio {10 ** (shift()/10)};
 
-=head2 fsl_mhz_km
+=head2 fsl_hz_m, fsl_mhz_km, fsl_ghz_km
 
-Return power loss in dB given frequency in MHz and distance in km
+Return power loss in dB given frequency and distance in the specified units of measure
 
   my $free_space_loss = fsl_mhz_km($mhz, $km); #returns dB
 
 =cut
 
-sub fsl_mhz_km {
-  my $freq_mhz = shift;
-  my $dist_km  = shift;
-  #Equvalent to 20log($f_mhz) + 20log($d_km) + 32.45 for performance
-  return _round(20 * log10($freq_mhz * $dist_km) + 32.45, 0.001); #32.45 from FCC OET Engineering Tools
+sub fsl_hz_m {
+  my ($f, $d) = @_;
+  return _fsl_constant($f, $d, -147.55);
 }
 
-sub _round {
-  my $num = shift;
-  my $div = shift || 1;
-  return int($num / $div + 0.5) * $div;
+sub fsl_mhz_km {
+  my ($f, $d) = @_;
+  return _fsl_constant($f, $d, 32.45);
+}
+
+sub fsl_ghz_km {
+  my ($f, $d) = @_;
+  return _fsl_constant($f, $d, 92.45);
+}
+
+sub _fsl_constant {
+  my $freq  = shift;
+  my $dist  = shift;
+  my $const = shift;
+  #Equvalent to 20log($freq) + 20log($dist) + $const for performance
+  return Math::Round::nearest(0.001, 20 * log10($freq * $dist) + $const);
 }
 
 =head1 SEE ALSO
 
-L<POSIX> log10
+L<POSIX/log10>, L<Math::Round/nearest>
+
+L<https://en.wikipedia.org/wiki/Decibel#Power_quantities>
+
+L<https://en.wikipedia.org/wiki/Free-space_path_loss#Free-space_path_loss_in_decibels>
 
 =head1 AUTHOR
 

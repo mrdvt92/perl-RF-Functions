@@ -5,6 +5,7 @@ WriteMakefile(
     PREREQ_PM         => {
                           'Exporter'            => 0,
                           'POSIX'               => 0,
+                          'Math::Round'         => 0, #for nearest since rounding is hard....
                           'Test::Simple'        => 0, #Test::More
                           'Test::Number::Delta' => 0,
                          },
