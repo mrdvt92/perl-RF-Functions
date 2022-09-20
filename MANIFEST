@@ -1,6 +1,7 @@
 Changes
 Makefile.PL
 MANIFEST
+CONTRIBUTING.md 
 README.md
 LICENSE
 t/001_load.t
