@@ -9,3 +9,7 @@ MRDVT
 db2ratio
 log10
 ratio2db
+dBi
+dBd
+dbd2dbi
+dbi2dbd
