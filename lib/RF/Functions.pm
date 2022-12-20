@@ -112,7 +112,7 @@ sub fsl_ghz_km {
 
 sub fsl_mhz_mi {
   my ($f, $d) = @_;
-  return _fsl_constant($f, $d, 36.58); #const = 20*log10(4*pi/c) where c = 0.18628237 mi/μs (aka mile * MHz)
+  return _fsl_constant($f, $d, 36.58); #const = 20*log10(4*pi/c) where c = 0.186282397 mi/μs (aka mile * MHz)
 }
 
 sub _fsl_constant {
