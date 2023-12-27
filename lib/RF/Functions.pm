@@ -141,7 +141,7 @@ Michael R. Davis, MRDVT
 
 MIT LICENSE
 
-Copyright (C) 2022 by Michael R. Davis, No claim to originial U.S. Government works
+Copyright (C) 2023 by Michael R. Davis
 
 =cut
 
