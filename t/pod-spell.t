@@ -13,3 +13,5 @@ dBi
 dBd
 dbd2dbi
 dbi2dbd
+CFR
+unrounded
