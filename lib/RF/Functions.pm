@@ -132,6 +132,8 @@ Returns the unrounded distance between the two reference points in kilometers us
   my $distance_km  = distance_fcc($lat1, $lon1, $lat2, $lon2); #reference points latitude and longitude pair in decimal degrees
   my $distance_fcc = Math::Round::round($distance_km); 47 CFR 73.208(c)(8)
 
+The FCC's formula is also defined in 47 CFR 1.958 and discussed on L<Wikipedia|https://en.wikipedia.org/wiki/Geographical_distance#FCC's_formula>
+
 =cut
 
 my $RADIANS_PER_DEGREE = CORE::atan2(1, 1)/45;
