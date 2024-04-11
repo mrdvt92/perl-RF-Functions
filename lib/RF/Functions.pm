@@ -6,7 +6,7 @@ use base qw{Exporter};
 use Math::Round qw{};
 
 our $PACKAGE   = __PACKAGE__;
-our $VERSION   = '0.04';
+our $VERSION   = '0.05';
 our @EXPORT_OK = qw(
                     db_ratio ratio2db
                     ratio_db db2ratio
