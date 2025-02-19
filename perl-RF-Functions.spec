@@ -1,6 +1,6 @@
 Name:           perl-RF-Functions
-Version:        0.05
-Release:        1%{?dist}
+Version:        0.06
+Release:        2%{?dist}
 Summary:        Perl Exporter for Radio Frequency (RF) Functions
 License:        MIT
 Group:          Development/Libraries
