@@ -65,7 +65,7 @@ Propagation Model Parameters and Limitation:
     Height of the base station antenna (30 - 200m)
     Height of the station antenna (1 - 10m)
 
-Implementation based on https://en.wikipedia.org/wiki/Hata\_model.
+Implementation based on [https://en.wikipedia.org/wiki/Hata\_model](https://en.wikipedia.org/wiki/Hata_model).
 
 ## distance\_fcc
 
